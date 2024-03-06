@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<title>★ HTML TEST ★</title>
+	</head>
+	<script type="text/javascript">
+		function btn_Auto_Insrt(){
+			if(document.getElementById("title").innerText == null){
+				alert("제목이없는(잘못된) 문서입니다.");
+			}
+			var title = document.getElementById("title").innerText;
+			var user_Id = document.getElementById("user_Id").innerText;
+			var dept = document.getElementById("dept").innerText;
+			var reg_Date = document.getElementById("reg_Date").innerText;
+			var refer_Cnt = document.getElementById("refer_Cnt").innerText;
+			var recom_Cnt = document.getElementById("recom_Cnt").innerText;
+			var content = document.getElementById("content").innerText;
+			var keyword = document.getElementById("keyword").innerText;
+			document.getElementById("text_content").value = "1. 제목 : "+title+" \n"+
+															"2. 작성자 : "+user_Id+" \n"+
+															"3. 부서 : "+dept+" \n"+
+															"4. 등록일시 : "+reg_Date+" \n"+
+															"5. 조회수 : "+refer_Cnt+" \n"+
+															"6. 추천수 : "+recom_Cnt+" \n"+
+															"7. 내용 : "+content+" \n"+
+															"8. 키워드 : "+keyword+" \n";
+		}
+		function btn_Rfsh_Content(){
+			if(document.getElementById("text_content").value == null){
+				alert("초기화 할 값이 없습니다.");
+			}
+		}
+		function btn_Rfsh(){
+			alert("버튼클릭");
+		}
+		function btn_Load(){
+			alert("버튼클릭");
+		}
+		function btn_Mdfy(){
+			alert("버튼클릭");
+		}
+		function btn_Save(){
+			alert("버튼클릭");
+		}
+	</script>
+	<body>
+		<h3 align="center">현장의견 </h3>
+		<div align="center" >
+			<p></p>
+			<input type="button" value="초기화" onclick="btn_Rfsh()">
+			<input type="button" value="불러오기" onclick="btn_Load()">
+			<input type="button" value="수정" onclick="btn_Mdfy()">
+			<input type="button" value="저장" onclick="btn_Save()">
+			<p></p>
+			<table border = "1">
+				<tr>
+					<th>제목</th>
+						<td id="title">지구대 112시스템 출동요소 지령자 수정에 대한 건</td>
+					<th>작성자</th>
+						<td id="user_Id">최창완</td>
+					<th>부서</th>
+						<td id="dept">경북청 구미서 형곡지구대</td>
+				</tr>
+				<tr>
+					<th>등록일시</th>
+						<td id="reg_Date">2021.03.16 17:50</td>
+					<th>조회수</th>
+						<td id="refer_Cnt">10</td>
+					<th>추천수</th>
+						<td id="recom_Cnt">0</td>
+				</tr>
+				<tr>
+					<th>내용</th>
+						<td id="content" colspan="5">시스템 오류로 보이는데 오류 수정 속히 해주시기 바랍니다.</td>
+				</tr>
+				<tr>
+					<th>키워드</th>
+						<td  id="keyword" colspan="5">지령대</td>
+				</tr>
+			</table>
+			<p></p>
+		</div>
+		<div align="center">
+			
+			<form>
+				<span style="color:red">* 최대 500자, 줄바꿈 10줄</span>
+				<input type="button" value="자동삽입" onclick="btn_Auto_Insrt()">
+				<input type="button" value="초기화" onclick="btn_Rfsh_Content()">
+			</form>
+			<p></p>
+			<textarea name="content" id="text_content" cols="120" rows="10"></textarea>
+		</div>
+	</body>
+</html>
